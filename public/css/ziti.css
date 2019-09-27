@@ -1,0 +1,28 @@
+@font-face{
+    font-family: '楷体';
+    src: url('../../../../../public/css/simkai.ttf');
+    src: url('../../../../../public/css/simkai.ttf') format('woff'),
+         url('../../../../../public/css/simkai.ttf') format('truetype'),
+         url('../../../../../public/css/simkai.ttf') format('svg');
+}
+@font-face{
+    font-family: '宋体';
+    src: url('../../../../../public/css/simsun.ttc');
+    src: url('../../../../../public/css/simsun.ttc') format('woff'),
+    url('../../../../../public/css/simsun.ttc') format('truetype'),
+    url('../../../../../public/css/simsun.ttc') format('svg');
+}
+@font-face{
+    font-family: '黑体';
+    src: url('../../../../../public/css/simhei.ttf');
+    src: url('../../../../../public/css/simhei.ttf') format('woff'),
+    url('../../../../../public/css/simhei.ttf') format('truetype'),
+    url('../../../../../public/css/simhei.ttf') format('svg');
+}
+@font-face{
+    font-family: '隶书';
+    src: url('../../../../../public/css/SIMLI.TTF');
+    src: url('../../../../../public/css/SIMLI.TTF') format('woff'),
+    url('../../../../../public/css/SIMLI.TTF') format('truetype'),
+    url('../../../../../public/css/SIMLI.TTF') format('svg');
+}
