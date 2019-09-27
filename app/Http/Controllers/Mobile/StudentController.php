@@ -9,7 +9,6 @@ class StudentController extends Controller
     public function index()
     {
         $list = Student::get();
-        dd($list);die;
         return view('student.index');
     }
 }
