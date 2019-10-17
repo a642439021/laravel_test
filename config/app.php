@@ -203,5 +203,6 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
     ],
+    "pwdstr"=>'qweqea'
 
 ];

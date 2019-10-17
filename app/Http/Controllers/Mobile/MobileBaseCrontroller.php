@@ -8,13 +8,13 @@ class MobileBaseCrontroller extends Controller
 {
     public function __construct()
     {
-//        if(!$this->checkLogin()){
-//            $tmp = $this->getContrllerInfo();
-//            if($tmp['method']!='login'){
-//                header('Location: '.route('login'));
-//                exit();
-//            }
-//        }
+        if(!$this->checkLogin()){
+            $tmp = $this->getContrllerInfo();
+            if($tmp['method']!='login'){
+                header('Location: '.route('login'));
+                exit();
+            }
+        }
     }
     public function getContrllerInfo()
     {
@@ -32,4 +32,5 @@ class MobileBaseCrontroller extends Controller
             return true;
         }
     }
+
 }

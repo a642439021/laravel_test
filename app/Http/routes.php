@@ -11,16 +11,20 @@
 |
 */
 
-use App\Task;
 use Illuminate\Http\Request;
 
 
 Route::any('/mobile/getStoreList','Mobile\IndexController@getStoreList')->name('getStoreList');
 Route::group(['middleware' => ['web'],'prefix'=>'mobile','namespace'=>'Mobile'], function () {
-    Route::get('/','IndexController@index');
+    Route::get('/','IndexController@index')->name('index');
     Route::get('/park','ParkController@index')->name('park');
+    Route::match(['get','post'],'/addCar','ParkController@addCar')->name('addpark');
     Route::get('/login','UserController@login')->name('login');
+    Route::post('/dologin','UserController@login');
     Route::get('/session2','IndexController@session2');
+});
+Route::group(['middleware'=>['web'],'namespace'=>'Api'],function(){
+    Route::post('Api/send_code/t/{time}','ApiController@sendValidateCode');
 });
 Route::get('/student','Mobile\StudentController@index');
 Route::get('/','Mobile\IndexController@index');

@@ -2,9 +2,9 @@
 namespace App\Http\Controllers\Mobile;
 
 use App\Http\Controllers\Mobile\MobileBaseCrontroller;
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 use App\Model\UserCar;
-use Illuminate\Support\Facades\Session;
+use App\Model\Ad;
 
 class ParkController extends MobileBaseCrontroller
 {
@@ -12,11 +12,24 @@ class ParkController extends MobileBaseCrontroller
 
     public function index()
     {
-        return Session::get('message');
-        var_dump(Session::all());die;
         if(!$this->checkLogin()){
             return redirect()->route('login');
         }
-        return view('park.index');
+        $user_id = session('user_id');
+        $list = UserCar::where(['user_id'=>$user_id])->get();
+        $ad = Ad::where(['pid'=>1,'enabled'=>1])->orderBy('orderby','desc')->get();
+        return view('park.index',[
+            'list'=>$list,
+            'ad'=>$ad
+        ]);
+    }
+    //添加车辆信息
+    public function addCar(Request $request)
+    {
+        if($request->isMethod('post')){
+            dump($request);
+        }else{
+            return view('park.addCar');
+        }
     }
 }

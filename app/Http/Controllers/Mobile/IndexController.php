@@ -11,7 +11,6 @@ class IndexController extends MobileBaseCrontroller
 {
 	public function index()
 	{
-	    return redirect()->route('park')->with(['message'=>'我是传递数据的']);
 	    //DB查询  一级为数组  二级为对象
         //model查询 为对象
 		$ad = Ad::where(['pid'=>1,'enabled'=>1])->orderBy('orderby','desc')->get();
